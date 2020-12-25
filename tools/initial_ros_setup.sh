@@ -102,22 +102,22 @@ echo
 echo "Are you sure you want to continue? [yN]"
 read -r REPLY
 echo
-if [ "$REPLY" = "y" ]; then
-  download_all
-  rosdep_install
-  if [ "$ENABLE_BUILD" = true ]; then
-    $CWD/navigation2_ws/src/navigation2/tools/build_all.sh
-  fi
 
-  cd ${CWD}
-  rm ${CHECKPOINT_FILES}
-  echo
-  echo "Everything downloaded and built successfully."
-  echo "To use the navstack source the setup.bash in the install folder"
-  echo
-  echo "> source navigation2/install/setup.bash"
-  echo
-  echo "To build the navstack you can either"
-  echo "1. Run 'colcon build --symlink-install' from the navigation2 folder"
-  echo "2. or run 'make' from navigation2/build/<project> folder"
+download_all
+rosdep_install
+if [ "$ENABLE_BUILD" = true ]; then
+  $CWD/navigation2_ws/src/navigation2/tools/build_all.sh
 fi
+
+cd ${CWD}
+rm ${CHECKPOINT_FILES}
+echo
+echo "Everything downloaded and built successfully."
+echo "To use the navstack source the setup.bash in the install folder"
+echo
+echo "> source navigation2/install/setup.bash"
+echo
+echo "To build the navstack you can either"
+echo "1. Run 'colcon build --symlink-install' from the navigation2 folder"
+echo "2. or run 'make' from navigation2/build/<project> folder"
+
