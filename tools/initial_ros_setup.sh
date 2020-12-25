@@ -47,7 +47,7 @@ download_navstack() {
     vcs import src < custom_nav2.repos
   else
     cd src
-    git clone https://github.com/ros-planning/navigation2.git
+    git clone https://github.com/alexkaravaev/navigation2.git
   fi
   return_to_root_dir
 }
