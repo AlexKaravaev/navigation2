@@ -99,9 +99,7 @@ echo "environment variables set at this time."
 echo
 echo "The current directory is $CWD"
 echo
-echo "Are you sure you want to continue? [yN]"
-read -r REPLY
-echo
+
 
 download_all
 rosdep_install
